@@ -1,3 +1,4 @@
+import { isInaccessible } from "@testing-library/dom";
 import React, { useContext, useEffect, useState } from "react";
 import { useHistory } from "react-router-dom"
 import { UserContext } from "./UserProvider"
@@ -7,6 +8,26 @@ export const UserInfo = (props) => {
     const { users, getUsers, getUserById } = useContext(UserContext)
     const [user, setUser] = useState({})
     const user_id = parseInt(localStorage.getItem("rare_user_id"));
+
+    const counters = document.querySelectorAll('.counter');
+    const speed = 200
+
+    counters.forEach(counter => {
+        const updateCount = () => {
+            const target = +counter.getAttribute('data-target');
+            const count = +counter.innerText;
+
+            const inc = target / speed;
+
+            if(count < target) {
+                counter.innerText = count + inc;
+                setTimeout(updateCount, 1);
+            } else {
+                count.innerText = target;
+            }
+        }
+        updateCount()
+    })
 
     useEffect(() => {
         if (user_id) {
