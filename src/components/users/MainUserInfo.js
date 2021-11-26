@@ -1,13 +1,14 @@
-import { isInaccessible } from "@testing-library/dom";
+// import { isInaccessible } from "@testing-library/dom";
 import React, { useContext, useEffect, useState } from "react";
-import { useHistory } from "react-router-dom"
+// import { useParams } from "react-router-dom"
 import { UserContext } from "./UserProvider"
 import "./users.css"
 
-export const UserInfo = (props) => {
-    const { users, getUsers, getUserById } = useContext(UserContext)
+export const MainUserInfo = () => {
+    const { getUserById } = useContext(UserContext)
     const [user, setUser] = useState({})
     const user_id = parseInt(localStorage.getItem("rare_user_id"));
+    // const userId = useParams()
 
     const counters = document.querySelectorAll('.counter');
     const speed = 200
@@ -33,26 +34,22 @@ export const UserInfo = (props) => {
         if (user_id) {
             getUserById(user_id).then((user) => {
             setUser(user);
-            console.log(user.is_staff)
             })
-        }
+        } 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
+    // useEffect(() => {
+    //     const thisUser = users.find(user => user.id === parseInt(userId)) || {}
+    //     setUser(thisUser)
+    // }, [userId, users])
 
-    /*
-    Full name
-    Avatar image (if exists, else use a default image)
-    Display name
-    Email
-    Creation Date (MM/DD/YYYY)
-    User Profile type
-    */
     return (
         <>
             <div className="profileDiv">
                 <section className="users">
-                    <h2 className="user-group"><b>Profile View:</b></h2>
-                    <div><img style={{height: '150px', margin: '10px 0px'}} src={user.profile_image_url}alt="profile pic"/></div>
+                    <h2 className="user-group"><b>{user.first_name}'s Profile View:</b></h2>
+                    <div><img style={{height: '150px', margin: '10px 0px'}} src={user.profile_image_url} alt="profile pic"/></div>
                     <div className="user_name"><b>Name: </b>{user.first_name} {user.last_name}</div>
                     <div className="user_email"><b>Email: </b>{user.email}</div>
                     <div className="user_email"><b>User since: </b>{user.created_on}</div>
