@@ -1,7 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { UserContext } from "./UserProvider";
 import { Link } from "react-router-dom";
-
 import "./users.css";
 
 export const AllUsersList = () => {
