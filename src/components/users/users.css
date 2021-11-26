@@ -1,5 +1,13 @@
-.counters .container {
-    display: flex;
-    text-align: center;
+.container {
+    text-align: right;
+    /* border: 1px solid black; */
+    margin: 0 6em;
+    padding: 0 1em;
 }
 
+.profileDiv {
+    border: 1px solid orange;
+    padding: 1em 0;
+    margin: -2em 6em;
+    text-align: center;
+}

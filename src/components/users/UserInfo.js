@@ -33,24 +33,36 @@ export const UserInfo = (props) => {
         if (user_id) {
             getUserById(user_id).then((user) => {
             setUser(user);
+            console.log(user.is_staff)
             })
         }
     }, [])
 
+
+    /*
+    Full name
+    Avatar image (if exists, else use a default image)
+    Display name
+    Email
+    Creation Date (MM/DD/YYYY)
+    User Profile type
+    */
     return (
         <>
+            <div className="profileDiv">
+                <section className="users">
+                    <h2 className="user-group"><b>Profile View:</b></h2>
+                    <div><img style={{height: '150px', margin: '10px 0px'}} src={user.profile_image_url}alt="profile pic"/></div>
+                    <div className="user_name"><b>Name: </b>{user.first_name} {user.last_name}</div>
+                    <div className="user_email"><b>Email: </b>{user.email}</div>
+                    <div className="user_email"><b>User since: </b>{user.created_on}</div>
+                    {user.is_staff === 0 ? <div style={{color: 'blue'}}>Rare Media User</div> : <div style={{color: 'red'}}>Rare Media Staff</div>}
+                </section>
+            </div>
             <section className="counters">
                 <div className="container">
-                    <div>
-                        <h4>subscribers</h4>
-                        <div className="subscribers_counter">0</div>
-                    </div>
+                        <div className="subscribers_counter"><b>Subscribers:</b> 0</div>
                 </div>
-            </section>
-            <section className="users">
-                <label className="user-group"><b>Account Info</b></label>
-                <div className="user_name"><b>Name: </b>{user.first_name} {user.last_name}</div>
-                <div className="user_email"><b>Email: </b>{user.email}</div>
             </section>
         </>
     );
