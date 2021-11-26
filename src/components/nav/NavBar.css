@@ -4,11 +4,11 @@
     justify-content: center;
     align-items: center;
     /* border: 2px solid green; */
-    padding: 0 4em;
+    padding: 0 12em;
 }
 
 .navbar__item, a {
-    flex-basis: 20%;
+    flex-basis: 15%;
     list-style-type: none;
     text-decoration: none;
 }

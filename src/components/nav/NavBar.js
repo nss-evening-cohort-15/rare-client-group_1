@@ -23,9 +23,9 @@ export const NavBar = () => {
             <li className="navbar__item">
                 <Link className="navbar__link" to="/profile">Profile</Link>
             </li>
-            <li className="navbar__item">
+            {/* <li className="navbar__item">
                 <Link className="navbar__link" to="/explore">Explore</Link>
-            </li>
+            </li> */}
             {
                 (localStorage.getItem("rare_user_id") !== null) ?
                     <li className="nav-item">
