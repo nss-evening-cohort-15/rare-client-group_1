@@ -2,6 +2,8 @@
     display: flex;
     flex-wrap: nowrap;
     justify-content: left;
+    overflow: hidden;
+    background-color: bisque;
 }
 
 .navbar__item {
@@ -11,4 +13,55 @@
 
 .navbar__logo {
     max-height: 6rem;
+}
+
+.navbar Link {
+    float: left;
+    font-size: 8px;
+    color: white;
+    text-align: center;
+    padding: 10px 12px;
+    text-decoration: none;
+}
+
+.admin_dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.admin_dropdown .admin_dropbtn {
+    font-size: 12px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 10px 10px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.navbar Link:hover, .admin_dropdown:hover .admin_dropbtn {
+    background-color: red;
+}
+
+.admin_dropdownContent {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.admin_dropdownContent Link {
+float: none;
+    color: black;
+    padding: 10px 12px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.admin_dropdown:hover .admin_dropdownContent {
+    display: block;
 }

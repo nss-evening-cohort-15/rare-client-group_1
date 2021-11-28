@@ -5,7 +5,7 @@ import { UserContext } from "./UserProvider"
 import "./users.css"
 
 export const UserInfo = (props) => {
-    const { users, getUsers, getUserById } = useContext(UserContext)
+    const { getUserById } = useContext(UserContext)
     const [user, setUser] = useState({})
     const user_id = parseInt(localStorage.getItem("rare_user_id"));
 

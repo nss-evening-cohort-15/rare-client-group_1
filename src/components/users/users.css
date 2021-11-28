@@ -2,4 +2,11 @@
     display: flex;
     text-align: center;
 }
+.admin_allUsers {
+    display: table-cell;
+    float: up;
+}
+.admin_userImage {
+    float: left;
+}
 
