@@ -9,7 +9,7 @@ export const NavBar = () => {
     return (
         <ul className="navbar">
             <li className="navbar__item">
-                <img className="navbar__logo" src={Logo} />
+                <img className="navbar__logo" src={Logo} alt="logo img"/>
             </li>
             <li className="navbar__item">
                 <Link className="navbar__link" to="/">Posts</Link>
@@ -18,11 +18,14 @@ export const NavBar = () => {
                 <Link className="navbar__link" to="/myposts">My Posts</Link>
             </li>
             <li className="navbar__item">
-                <Link className="navbar__link" to="/profile">Profile</Link>
+                <Link className="navbar__link" to="/allusers">All Users</Link>
             </li>
             <li className="navbar__item">
-                <Link className="navbar__link" to="/explore">Explore</Link>
+                <Link className="navbar__link" to="/profile">Profile</Link>
             </li>
+            {/* <li className="navbar__item">
+                <Link className="navbar__link" to="/explore">Explore</Link>
+            </li> */}
             {
                 (localStorage.getItem("rare_user_id") !== null) ?
                     <li className="nav-item">
