@@ -1,18 +1,24 @@
 .navbar {
     display: flex;
     flex-wrap: nowrap;
+
     justify-content: left;
     overflow: hidden;
-    background-color: bisque;
+
+    align-items: center;
+    /* border: 2px solid green; */
+    padding: 0 12em;
+
 }
 
-.navbar__item {
-    flex-basis: 20%;
+.navbar__item, a {
+    flex-basis: 15%;
     list-style-type: none;
+    text-decoration: none;
 }
 
 .navbar__logo {
-    max-height: 6rem;
+    max-height: 5rem;
 }
 
 .navbar Link {

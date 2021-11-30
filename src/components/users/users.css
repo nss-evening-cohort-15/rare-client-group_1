@@ -1,5 +1,14 @@
-.counters .container {
-    display: flex;
+.container {
+    text-align: right;
+    /* border: 1px solid black; */
+    margin: 0 6em;
+    padding: 0 1em;
+}
+
+.profileDiv {
+    border: 1px solid orange;
+    padding: 1em 0;
+    margin: -2em 6em;
     text-align: center;
 }
 .admin_allUsers {
@@ -10,3 +19,15 @@
     float: left;
 }
 
+.userListWrapper {
+    margin: -2em 6em;
+    border: 1px solid gray;
+    padding: 1em;
+}
+
+.allUserList {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 20px;
+}
