@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useHistory } from "react-router-dom";
 import "./NavBar.css";
-import { Input, Menu, Dropdown } from "semantic-ui-react";
+import { Menu, Dropdown } from "semantic-ui-react";
 import Logo from "./rare.jpeg";
 
 export const NavBar = () => {
@@ -10,27 +10,25 @@ export const NavBar = () => {
   return (
     <div style={{ margin: '1em 8em', display: 'flex'}}>
       <img className="navbar__logo" src={Logo} alt="logo img" />
-      <Menu>
-        <Dropdown item text='Admin'>
-          <Dropdown.Menu>
-            <Dropdown.Item>Pending Posts</Dropdown.Item>
-            <Dropdown.Item>All Users</Dropdown.Item>
-      </Dropdown.Menu>
-        </Dropdown>
-      </Menu>
+      {/* <Menu>
+      </Menu> */}
       <Menu secondary style={{ flex: "2" }}>
+        <Dropdown item text='Admin'>
+            <Dropdown.Menu>
+              <Dropdown.Item href="/pendingposts">Pending Posts</Dropdown.Item>
+              <Dropdown.Item href="/allusers">All Users</Dropdown.Item>
+            </Dropdown.Menu>
+        </Dropdown>
         <Menu.Item href="/">Posts</Menu.Item>
 
         <Menu.Item href="/myposts">My Posts</Menu.Item>
 
-        <Menu.Item href="/allusers">All Users</Menu.Item>
-
         <Menu.Item href="/profile">Profile</Menu.Item>
 
         <Menu.Menu position="right" style={{display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-          <Menu.Item>
+          {/* <Menu.Item>
             <Input icon="search" placeholder="Search..." />
-          </Menu.Item>
+          </Menu.Item> */}
 
           {localStorage.getItem("rare_user_id") !== null ? (
             <li className="nav-item">
