@@ -5,7 +5,7 @@ export const AllPosts = () => {
     return (
         <div>
             <div style={{border: '1px solid lightgray', padding: '.5em 2em', margin: '-2em 6em'}}>
-            <h2><b>Posts</b></h2>
+            <h2><b>All User Posts</b></h2>
 
                 <h3 style={{marginBottom: '3px'}}>Arranging Semantics UI for our Navbar <span role="img" aria-label="Woman at laptop">👩🏾‍💻</span> </h3>
                 <p style={{fontSize: '15px', color: 'gray'}}> Author: Brittany Garrett on Tuesday, 11/30/2021</p>
