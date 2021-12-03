@@ -8,6 +8,7 @@ import { MainUserPosts } from "./posts/MainUserPosts"
 import { MainUserInfo } from "./users/MainUserInfo"
 import { AllUsersList } from "./users/AllUsersList"
 import { OneUserInfo } from "./users/OneUserInfo"
+import { PendingPosts } from "./posts/PendingPosts"
 
 
 export const ApplicationViews = () => {
@@ -37,6 +38,10 @@ export const ApplicationViews = () => {
         
             <Route exact path="/myposts">
                 <MainUserPosts />
+            </Route>
+        
+            <Route exact path="/pendingposts">
+                <PendingPosts />
             </Route>
 
             <Route path="/posts/detail/:postId(\d+)">
